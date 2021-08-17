@@ -13,6 +13,7 @@ const filterObj = (obj, ...allowed)=>{
     return newObj
 }
 exports.updateMe = catchAsync(async (req,res)=>{
+    
     if(req.body.password || req.body.confirmPassword){
         new appError('you can not change password here',401);
     }

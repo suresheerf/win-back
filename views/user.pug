@@ -20,12 +20,12 @@ block content
               a.nav-link Manage Billings 
      .col-8(style = "text-align:center") 
         form.userDetailsForm.mt-4
-            input.form-control(type="text" value = `${user.name}`) 
+            input.form-control#name(type="text" value = `${user.name}`) 
             br
-            input.form-control(type="text" value = `${user.email}`)
+            input.form-control#email(type="text" value = `${user.email}`)
             br
-            img(src = `/img/${user.img}` style="height:60px; width:60px; " alt = 'user image')
-            button.btn.btn-primary Update Details 
+            img(src = `/img/users/${user.img}` style="height:60px; width:60px; " alt = 'user image')
+            button.btn.btn-primary.updateUserBtn Update Details 
         .row 
           h5 Change Password 
             form.changePasswordForm.mt-4

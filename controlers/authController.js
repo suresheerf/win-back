@@ -26,7 +26,7 @@ const createSendToken= (user,statusCode,req,res)=>{
         status:'success',
         token,
         user
-    })
+    });
 }
 
 exports.signUp = catchAsync(async (req,res,next)=>{
@@ -56,7 +56,7 @@ exports.login = catchAsync( async (req,res,next)=>{
     }
 
     createSendToken(user,200,req,res);
-})
+});
 
 exports.logout = (req,res,next)=>{
 
@@ -94,7 +94,7 @@ exports.protect = catchAsync (async (req,res,next)=>{
     req.user = user;
     res.locals.user = user;
     next();
-})
+});
 
 exports.isLoggedIn = async (req,res,next)=>{
 
@@ -192,12 +192,12 @@ exports.resetPassword = catchAsync(async (req,res,next)=>{
     await user.save();
 
     createSendToken(user,200,req,res);   
-})
+});
 
 exports.updatePassword = catchAsync(async (req,res,next)=>{
     const user = await User.findById(req.user._id).select('+password');
-    
-    if(!await user.correctPassword(req.body.oldPassword , user.password)) {
+    console.log(user)
+    if(!await user.correctPassword(req.body.currentPassword , user.password)) {
     return next(new appError('entered old password is wrong,please try again',401));
     }
     user.password = req.body.newPassword;
@@ -205,4 +205,4 @@ exports.updatePassword = catchAsync(async (req,res,next)=>{
 
     await user.save();
     createSendToken(nuser,200,req,res);
-})
+});

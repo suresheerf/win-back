@@ -3,11 +3,14 @@ import { login } from './login'
 import { signup } from './signup';
 import { logout } from './login';
 import { createCourse } from './createCourse';
+import { updateUserData } from './updatesettings';
 
 const loginForm = document.querySelector('.form');
 const signupForm = document.querySelector('.signupForm');
 const logoutBtn = document.querySelector('.logout');
 const createCourseForm = document.querySelector('.createCourseForm');
+const userDetailsForm = document.querySelector('.userDetailsForm');
+const changePasswordForm = document.querySelector('.changePasswordForm');
 // const detailsBtn = document.querySelector('.datails');
 if(signupForm){
 
@@ -63,5 +66,27 @@ if(loginForm){
     
         const password = document.getElementById('password').value;
         login(email,password)
+    });
+}
+
+if(userDetailsForm){
+
+    userDetailsForm.addEventListener('submit',e=>{
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const name = document.getElementById('name').value;
+
+        updateUserData({name,email},'data');
+    });
+}
+if(changePasswordForm){
+
+    changePasswordForm.addEventListener('submit',e=>{
+        e.preventDefault();
+        const currentPassword = document.getElementById('currentPassword').value;
+        const newPassword = document.getElementById('newPassword').value;
+        const confirmNewPassword = document.getElementById('confirmNewPassword').value;
+        
+        updateUserData({currentPassword,newPassword,confirmNewPassword},'password');
     });
 }

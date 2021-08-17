@@ -4,8 +4,8 @@ const app = require('./app');
 
 dotenv.config({path:"./config.env"});
 const port = process.env.PORT || 3000;
-const databse = 'mongodb+srv://admin:admin1234@cluster0.6oanr.mongodb.net/natours-test?retryWrites=true&w=majority'
-mongoose.connect(databse,{
+// const databse = 'mongodb+srv://admin:admin1234@cluster0.6oanr.mongodb.net/natours-test?retryWrites=true&w=majority'
+mongoose.connect(process.env.DATABASE_local,{
   useNewUrlParser:true,
   useCreateIndex:true,
   useFindAndModify:false,
@@ -13,13 +13,13 @@ mongoose.connect(databse,{
 
 }).then(() =>{
   console.log('DB connection successful');
+});
 
 const server = app.listen(port,()=>{
-    console.log(` App running at port 3000`);
-});
+  console.log(` App running at port 3000`);
 });
 
-proccess.config('unhandledRejection',err=>{
+process.on('unhandledRejection',err=>{
   console.log('UNHANDLED REJECTION! shutting down...');
   console.log(err.name,err.message);
   server.close(()=>{
@@ -27,7 +27,7 @@ proccess.config('unhandledRejection',err=>{
   });
 });
 
-proccess.config('SIGTERM',()=>{
+process.on('SIGTERM',()=>{
   console.log('SIGTERM recieved! shutting down');
   server.close(()=>{
     console.log('process terminated!');

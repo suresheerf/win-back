@@ -5,7 +5,7 @@ block content
     .container-fluid(style='border:2px solid')
       .row
           .col-4
-            img.img-fluid(src=`/img/carousel/${course.img}` alt=`${course.name} image` )
+            img.img-fluid(src=`/img/courses/${course.img}` alt=`${course.name} image` )
           .col-8
             .row
               .col-6
@@ -22,7 +22,7 @@ block content
         .col-4 
           .row 
             h4 Instructor 
-            img.img-fluid(src ='/img/man.png' style = 'height:60px; width:60px; border-radius: 30px;')
+            img.img-fluid(src ='/img/users/man.png' style = 'height:60px; width:60px; border-radius: 30px;')
             span= course.tutors.name
           .row 
             h3 Reviews
