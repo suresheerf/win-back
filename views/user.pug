@@ -1,0 +1,40 @@
+extends base
+
+block content 
+ .container-fluid.mt-2 
+   .row 
+     .col-4(style = "height:70vh;") 
+        nav.bg-dark.navbar-dark 
+          ul.navbar-nav 
+            li.nav-item 
+             a.nav-link My Courses 
+            li.nav-item 
+             a.nav-link Settings 
+          if (user.role ==='admin')
+            ul.navbar-nav
+              li.nav-item 
+              a.nav-link Manage Users 
+              li.nav-item 
+              a.nav-link Manage Courses 
+              li.nav-item 
+              a.nav-link Manage Billings 
+     .col-8(style = "text-align:center") 
+        form.userDetailsForm.mt-4
+            input.form-control(type="text" value = `${user.name}`) 
+            br
+            input.form-control(type="text" value = `${user.email}`)
+            br
+            img(src = `/img/${user.img}` style="height:60px; width:60px; " alt = 'user image')
+            button.btn.btn-primary Update Details 
+        .row 
+          h5 Change Password 
+            form.changePasswordForm.mt-4
+              input.form-control.border-box#currentPassword(type="password", name="currentPassword",placeholder = '********')
+              br 
+              input.form-control#newPassword(type="password", name="newPassword",placeholder = '********') 
+              br
+              input.form-control#confirmNewPassword(type="password", name="confirmNewPassword",placeholder = '********')
+              br
+              button.btn.btn-primary Change Password  
+
+            

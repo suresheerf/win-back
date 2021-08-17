@@ -1,0 +1,31 @@
+extends base
+mixin createWeekFields(week)
+ p week #{week}
+ input.form-control(type="text" placeholder = 'week ' id=`week${week}`)
+ br
+ input.form-control(type="text-area" placeholder = 'week description' id =`wdescription${week}`)
+ br
+ label lessons 
+ input.form-control(type="text" placeholder = 'lesson name' id =`lname${week}`)
+ br
+ input.form-control(type="url", name="llink" placeholder = 'lesson link' id= `llink${week}`)
+
+block content 
+ .container-fluild.bg-secondary
+    h3(align='center') Create New Course 
+    form.createCourseForm.mt-3
+      input.form-control#name(type = 'text ' placeholder = 'course name')
+      br
+      input.form-control#duration(type = 'text ' placeholder = 'course duration')
+      br
+      input.form-control#img(type = 'text ' placeholder = 'course image')
+      br
+      input.form-control#price(type = 'text ' placeholder = 'course price')
+      br
+      textarea.form-control#description(name="course description", cols="30", rows="8" placeholder = 'course description')
+      br
+      h5 curriculum 
+      +createWeekFields(2)
+      
+      button.btn.btn-primary create course 
+    

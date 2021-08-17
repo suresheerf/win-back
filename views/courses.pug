@@ -1,0 +1,25 @@
+extends base 
+block content
+  main.bg-secondary.text-white
+    h1(align = 'center') COURSES  
+    if (user && user.name.split(' ')[0] === 'admin')
+      a.createCourseBtn.btn.btn-bark(href = '/createcourse') create new course
+    .m-2.bg-dark.text-light
+      each course in courses
+        .container-fluid.border.border-secondary
+          .row
+              .col-4
+                img.img-fluid(src=`/img/carousel/${course.img}` alt="lion" )
+              .col-8
+                .row
+                  .col-6
+                      h3= course.name
+                  .col-6
+                  p.text-end=`${course.duration}Weeks`
+                  .row
+                  p= course.description
+                  .row
+                  .col-12.d-flex.align-items-center.justify-content-center
+                      button.btn.btn-primary.enroll.me-3 Enroll
+                      a.btn.btn-primary.details.me-3(type = 'button' href=`http://localhost:3000/courses/${course._id}`) Details
+                      p(style='margin-top:1rem') Price: #{course.price}$

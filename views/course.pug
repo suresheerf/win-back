@@ -1,0 +1,42 @@
+extends base 
+
+block content
+ .m-2.bg-dark.text-light
+    .container-fluid(style='border:2px solid')
+      .row
+          .col-4
+            img.img-fluid(src=`/img/carousel/${course.img}` alt=`${course.name} image` )
+          .col-8
+            .row
+              .col-6
+                  h3= course.name
+              .col-6
+               p.text-end=`${course.duration}Weeks`
+              .row
+               p= course.description
+              .row
+              .col-12.d-flex.align-items-center.justify-content-center
+                  button.btn.btn-primary.enroll.me-3 Enroll
+                  p(style='margin-top:1rem') Price: #{course.price}$
+      .row 
+        .col-4 
+          .row 
+            h4 Instructor 
+            img.img-fluid(src ='/img/man.png' style = 'height:60px; width:60px; border-radius: 30px;')
+            span= course.tutors.name
+          .row 
+            h3 Reviews
+            p ipsum dolor sit amet consectetur adipisicing elit. Commodi officia autem assumenda dolor, quia repellendus.
+            p 3 
+        .col-8 
+           h3 caricullum
+           each week in course.caricullum 
+            h3 Week #{week.week} 
+             p= week.despriction
+             ul
+              each link in week.links 
+               li=link.name
+               li=link.link
+              
+
+      

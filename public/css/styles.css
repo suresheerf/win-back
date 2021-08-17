@@ -1,0 +1,72 @@
+.navbar{
+  background-color: black;
+  color: aliceblue;
+}
+.logo{
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+}
+form {
+  text-align: center;
+  align-self: center;
+  color: aliceblue;
+  padding: 0% 2%;
+  margin-top: 2px;
+  border-radius: 10px;
+  width: 90%;
+
+
+}
+.form-control{
+  border: 2px solid ;
+  border-radius: 10px;
+}
+
+
+.carousel{
+  height: 30%;
+}
+.alert{
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 999;
+  text-align: center;
+  transform: translateX(-50%);
+  border-radius: 5px;
+}
+.alert-success{
+  background-color: black;
+  border: 1px solid white;
+  color:white
+}
+.alert-error{
+  background-color:black;
+  color: white;
+  border:1px,solid white;
+}
+.error-template {padding: 40px 15px;text-align: center;}
+.error-actions {margin-top:15px;margin-bottom:15px;}
+.error-actions .btn { margin-right:10px; }
+a{
+  text-decoration: none;
+  color: rgb(41, 167, 25);;
+}
+/* footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+
+} */
+
+.form{
+  margin: 20vh 0;
+}
+.signupForm{
+ margin: 10vh auto 13vh auto;
+ padding: auto;
+}
+.createCourseForm{
+  margin: auto;
+}

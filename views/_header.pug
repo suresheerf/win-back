@@ -1,0 +1,26 @@
+nav.navbar.bg-dark.navbar-dark.navbar-expand-md
+  .container-fluid
+    a.navbar-brand(href = '/')
+     img.logo(src="/img/logo.jpg" alt="logo")
+     span WIN ROBOT
+    ul.navbar-nav
+     li.nav-item
+      a.nav-link(href = '/') Home
+     li.nav-item
+      a.nav-link(href = '/courses') Courses
+     li.nav-item
+      a.nav-link About
+     li.nav-item
+      if user
+        li.nav-item
+         a.nav-link(href ='/user/me')
+          img.img-thumb(src=`/img/${user.img}` style = "height:20px; width: 20px;")
+          span= user.name.split(' ')[0]
+        li.nav-item 
+         a.nav-link.logout(type = 'button') Logout
+      else
+        li.nav-item
+         a.nav-link(href = '/login') Login
+        li.nav-item 
+         a.nav-link(href = '/signup') Signup
+
