@@ -1,7 +1,8 @@
 {
-    "firstname":"admin",
+    "name":"admin",
     "img":"man.png",
-    "email"
+    "email":"admin1234",
+    "role":"admin"
 
 
 }

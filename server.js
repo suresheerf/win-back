@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const app = require('./app');
 
 dotenv.config({path:"./config.env"});
-
-mongoose.connect(process.env.DATABASE_LOCAL,{
+const databse = 'mongodb+srv://admin:admin1234@cluster0.6oanr.mongodb.net/natours-test?retryWrites=true&w=majority'
+mongoose.connect(databse,{
   useNewUrlParser:true,
   useCreateIndex:true,
   useFindAndModify:false,

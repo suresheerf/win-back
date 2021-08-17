@@ -27,10 +27,7 @@ exports.getCourses = catchAsync(async (req,res,next)=>{
 });
 
 exports.getCourse =catchAsync( async (req,res,next)=>{
-         console.log("inside get course");
          const cour = await course.findById(req.params.id);
-
-         console.log('after get course');
 
          if(!cour){
              return next(new appError('not found any course with this ID',404));
@@ -44,7 +41,6 @@ exports.getCourse =catchAsync( async (req,res,next)=>{
 });
 
 exports.createCourse =catchAsync( async (req,res,next)=>{
-        console.log('body:',req.body);
         const cou = await course.create(req.body);
         res.status(201).json({
             status:"success",

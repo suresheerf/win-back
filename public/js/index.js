@@ -20,8 +20,6 @@ if(signupForm){
         const password = document.getElementById('password').value;
         const confirmPassword = document.getElementById('confirmPassword').value;
     
-        console.log(name,email,password,confirmPassword);
-    
         signup(name,email,password,confirmPassword)
     });
 }
@@ -52,9 +50,6 @@ if(createCourseForm) createCourseForm.addEventListener('submit', e=>{
                 
             }
 
-
-    console.log(course);
-
    createCourse(course);
 })
 
@@ -65,10 +60,8 @@ if(loginForm){
     loginForm.addEventListener('submit',e=>{
         e.preventDefault();
         const email = document.getElementById('email').value;
-        console.log(email);
     
         const password = document.getElementById('password').value;
-        console.log(password);
         login(email,password)
     });
 }

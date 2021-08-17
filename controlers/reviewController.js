@@ -8,7 +8,6 @@ exports.getAllReviews = catchAsync(async (req,res,next)=>{
     if(req.params.courseId) filter = { course : req.params.courseId};
     const reviews = await Review.find(filter);
     if(!reviews) return next(new appError('there are no reviwes yet',403));
-    console.log(reviews);
     res.status(200).json({
         status:'success',
         results:reviews.length,

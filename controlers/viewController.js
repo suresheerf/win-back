@@ -15,7 +15,6 @@ exports.getCourses = catchAsync(async (req,res,next)=>{
 });
 
 exports.getCourse = catchAsync(async (req,res,next)=>{
-    console.log('inside get course')
     const course = await Course.findOne({_id:req.params.id})
 
     if(!course) return next(new appError('there is no such course',404))

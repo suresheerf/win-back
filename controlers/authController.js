@@ -176,13 +176,13 @@ exports.forgetPassword = catchAsync( async (req,res,next) =>{
 exports.resetPassword = catchAsync(async (req,res,next)=>{
     const hashedToken = crypto.createHash('sha256').update(req.params.token).digest('hex');
 
-    console.log(hashedToken);
+
                                                         
     const user = await User.findOne({
         passwordResetToken : hashedToken,
         resetTokenExpiresIn : {$gt : Date.now()}});
 
-    console.log(user);
+
 
     if(!user) return next(new appError('Token is invalid or expired',400));
 
@@ -198,8 +198,6 @@ exports.resetPassword = catchAsync(async (req,res,next)=>{
 
 exports.updatePassword = catchAsync(async (req,res,next)=>{
     const user = await User.findById(req.user._id).select('+password');
-
-    console.log(user);
     
     if(!await user.correctPassword(req.body.oldPassword , user.password)) {
     return next(new appError('entered old password is wrong,please try again',401));

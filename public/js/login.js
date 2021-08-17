@@ -2,7 +2,6 @@
  import { showAlert } from "./alerts";
  export const login = async (email,password)=>{
     try{
-        console.log('befor axios');
         const res = await axios({
              method: 'POST',
              url: '/api/users/login',
@@ -11,7 +10,6 @@
                  password
              }
          });
-         console.log(res);
          if(res.data.status === 'success'){
              showAlert('success','login success');
              window.setTimeout(()=>{
@@ -29,7 +27,6 @@
 
 export const logout = async ()=>{
     try{
-        console.log('befor axios');
         const res = await axios({
              method: 'GET',
              url: '/api/users/logout'
