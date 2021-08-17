@@ -7,6 +7,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
+const compression = require("compression")
 
 const courseRouter = require('./routers/courseRouter');
 const userRouter = require('./routers/userRouter');
@@ -60,7 +61,7 @@ app.use(hpp({
     whitelist:['duration']
 }));
 
-
+app.use(compression());
 ///  routes
 
 app.use('/',viewRouter)
