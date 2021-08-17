@@ -14,7 +14,22 @@ mongoose.connect(databse,{
 }).then(() =>{
   console.log('DB connection successful');
 
-app.listen(port,()=>{
+const server = app.listen(port,()=>{
     console.log(` App running at port 3000`);
 });
+});
+
+proccess.config('unhandledRejection',err=>{
+  console.log('UNHANDLED REJECTION! shutting down...');
+  console.log(err.name,err.message);
+  server.close(()=>{
+    process.exit(1);
+  });
+});
+
+proccess.config('SIGTERM',()=>{
+  console.log('SIGTERM recieved! shutting down');
+  server.close(()=>{
+    console.log('process terminated!');
+  });
 });
