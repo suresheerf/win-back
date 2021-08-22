@@ -15,7 +15,7 @@ import { showAlert } from "./alerts";
              showAlert('success',msg);
              window.setTimeout(()=>{
                 location.reload();
-             },500);
+             },5000);
          }
     } 
     catch(err) {

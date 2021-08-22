@@ -4,7 +4,7 @@ const User = require('./../models/user.model');
 const appError = require('../utils/appError');
 const jwt = require('jsonwebtoken');
 const catchAsync = require('./../utils/catchAsync');
-const sendEmail = require('./../utils/sendemail');
+const Email = require('./../utils/email');
 
 const signToken = id=>{
     return jwt.sign({id },process.env.JWT_SECRET,{
@@ -37,6 +37,9 @@ exports.signUp = catchAsync(async (req,res,next)=>{
         confirmPassword:req.body.confirmPassword,
         role:req.body.role
     });
+
+    const url = `${req.protocol}://${req.get('host')}/user/me`;
+    await new Email(nuser , url).sendWelcome();
     createSendToken(nuser,201,req,res);
 });
 
@@ -141,19 +144,13 @@ exports.forgetPassword = catchAsync( async (req,res,next) =>{
     }
 
     const resetToken = user.createPasswordResetToken();
+
     await user.save({validateBeforeSave : false});
+
     const resetUrl = `${req.protocol}://${req.get('host')}/users/resetPassword/${resetToken}`
-    const message = `forgot password? follow the below link to set new one.\n
-    ${resetUrl}\n. If you didn't forgot password.please ignore this email.`
     try{
-        
-        await sendEmail(
-            {
-                email:user.email,
-                subject:"your password reset token (valid for 10min)",
-                message
-            }
-        );
+       
+        await new Email(user,resetUrl).sendPasswordResetToken();
 
         res.status(200).json({
             status:'success',
@@ -172,14 +169,12 @@ exports.forgetPassword = catchAsync( async (req,res,next) =>{
 });
 
 exports.resetPassword = catchAsync(async (req,res,next)=>{
+
     const hashedToken = crypto.createHash('sha256').update(req.params.token).digest('hex');
-
-
                                                         
     const user = await User.findOne({
         passwordResetToken : hashedToken,
         resetTokenExpiresIn : {$gt : Date.now()}});
-
 
 
     if(!user) return next(new appError('Token is invalid or expired',400));

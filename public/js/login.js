@@ -14,7 +14,7 @@
              showAlert('success','login success');
              window.setTimeout(()=>{
                  location.assign('/');
-             },500);
+             },5000);
          }
     } 
     catch(err) {

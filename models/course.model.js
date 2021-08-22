@@ -8,7 +8,8 @@ const courseSchema = new mongoose.Schema({
     },
     duration :Number,
     description :String,
-    img :String,
+    imageCover :String,
+    images:Array,
     price :Number,
     caricullum:
         [

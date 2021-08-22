@@ -1,22 +1,19 @@
 import axios from "axios";
 import { showAlert } from "./alerts";
 
-export const signup = async (name,email,password,confirmPassword)=>{
+export const forgotPassword = async (email)=>{
     try{     
            const res = await axios({
              method: 'POST',
-             url: '/api/users/signup',
+             url: '/api/users/forgetPassword',
              data:{
-                name,
-                email,
-                password,
-                confirmPassword
+                email
              }
          });
          if(res.data.status === 'success'){
-            showAlert('success','signup success')
+            showAlert('success','Password reset link sent')
             window.setTimeout(()=>{
-               location.assign('/');
+               location.assign('/login');
             },5000);
         }
 

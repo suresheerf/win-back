@@ -1,26 +1,25 @@
-nav.navbar.bg-dark.navbar-dark.navbar-expand-md
-  .container-fluid
-    a.navbar-brand(href = '/')
-     img.logo(src="/img/logo.jpg" alt="logo")
-     span WIN ROBOT
-    ul.navbar-nav
-     li.nav-item
-      a.nav-link(href = '/') Home
-     li.nav-item
-      a.nav-link(href = '/courses') Courses
-     li.nav-item
-      a.nav-link About
-     li.nav-item
-      if user
-        li.nav-item
-         a.nav-link(href ='/user/me')
-          img.img-thumb(src=`/img/users/${user.img}` style = "height:20px; width: 20px;")
-          span= user.name.split(' ')[0]
-        li.nav-item 
-         a.nav-link.logout(type = 'button') Logout
-      else
-        li.nav-item
-         a.nav-link(href = '/login') Login
-        li.nav-item 
-         a.nav-link(href = '/signup') Signup
-
+nav.navbar 
+  .brand
+    a(href = '/') 
+      .d-flex
+        img.logo(src = '/img/logo.jpg' alt = 'Logo')
+        p.brand-name(style ="margin:auto 0;") WINROBOT 
+  ul.navbar-nav
+    li.navbar-item 
+      a.navbar-link(href = '/') Home 
+    li.navbar-item 
+      a.navbar-link(href = '/courses') Courses 
+    li.navbar-item 
+      a.navbar-link(href = '/about') About
+    if user   
+      li.navbar-item 
+        a.navbar-link.logout Logout 
+      li.navbar-item
+       .d-flex   
+        img.user-img(src=`/img/users/${user.img}`) 
+        a.navbar-link(href = '/user/me')= user.name.split(' ')[0]
+    else 
+      li.navbar-item 
+        a.navbar-link(href = '/login') Login 
+      li.navbar-item  
+        a.navbar-link(href = '/signup') Signup 

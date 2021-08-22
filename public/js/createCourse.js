@@ -15,7 +15,7 @@ export const createCourse = async (course)=>{
                  showAlert('success','New course created');
                  window.setTimeout(()=>{
                      location.assign('/courses');
-                 },500);
+                 },5000);
              }
         } 
         catch(err) {

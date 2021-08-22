@@ -1,10 +1,27 @@
-extends base
+extends base 
 
 block content 
- .container-fluid
-   img.img-fluid(src="/img/carousel/brain_3.jpg" alt="brain")
-  
-   article
-    section
-     h3 Heading
+ .main
+   .home 
+      //- .carousel 
+      //-    img.carousel-img(src = '/img/carousel/brain_3.jpg' alt = 'carousel image')
+      .content 
+        h1.content WELCOME TO WINROBOT 
+
+   .data
+      .heading
+        h2 Heading 
+        p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi error, eius a asperiores repellat ex sapiente sit, ut explicabo cupiditate eveniet esse facere corporis facilis excepturi ipsum voluptates nesciunt debitis.Eveniet sit at iure molestias, ipsum, dolorum doloremque delectus reprehenderit alias quae quis asperiores soluta, voluptates quos omnis? Qui quasi ducimus inventore pariatur amet perspiciatis omnis ratione velit est hic.Doloremque accusantium sit vero quasi a adipisci, asperiores officia earum delectus reiciendis harum quae aspernatur itaque non mollitia iste sapiente eius totam, quibusdam optio, eum repellendus minima velit. Nobis, fugit?Consequuntur, eos velit. Delectus fuga rem assumenda eum laborum deleniti adipisci, eveniet voluptatibus magnam quaerat odit recusandae amet. Magni doloribus architecto ipsum ut beatae animi aliquid culpa natus molestias molestiae!Iusto totam inventore harum, magni a consequatur accusamus ipsam vero numquam rerum autem impedit quia ex provident perferendis voluptates, maxime quaerat, aliquam qui ullam possimus voluptate. Voluptas aut quaerat iste!Repellat aliquid veritatis, dolorum ipsam magni dolores dolor a, placeat odio amet obcaecati est hic omnis nesciunt sunt ad accusantium nulla. Nisi laboriosam consequuntur nulla, sint doloremque ex minima pariatur.Tempora dolorem tenetur quam repellendus, magni fuga voluptatum perspiciatis officiis ea iure quis exercitationem incidunt obcaecati deleniti quo sed recusandae provident doloremque id dicta inventore. Magnam cupiditate ea facilis placeat.Explicabo alias optio earum inventore quo impedit quis, consectetur nisi dolor? Hic accusantium consequatur rem vel cumque recusandae ratione illum omnis, aut tenetur iure quo dolorum nisi nesciunt itaque numquam?Quasi sunt cum libero veritatis, perspiciatis voluptates quis similique suscipit eligendi adipisci magnam id expedita ratione aperiam, velit unde temporibus? Vel obcaecati quae porro, ratione officia veritatis eius modi dolorum?Doloremque rem nisi fugit corporis eos libero dolorem sapiente aperiam maiores earum soluta facilis explicabo reiciendis expedita omnis iste, eum tenetur obcaecati voluptas odit optio perspiciatis tempore. Exercitationem, illo nesciunt!
+      .notifications 
+        h2 Notifications
+        if (user && user.role === 'admin')
+         button.btn.btnAddNotification new notification
+        .note 
+          h3.ntitle title 
+          p.ndate Date
+          p.ncontent notification content
+        if (user && user.role === 'admin')
+          button.btn.btnDeleteNotification Remove 
+
+        
         

@@ -1,14 +1,11 @@
 extends base
 block content 
-   .row 
-    .col-3
-    .col-6.justify-content-center 
-     
-     form.signupForm.bg-dark
-        h1.mb-4(align = 'center') REGISTER
-        input.form-control#firstName.my-2(name = 'firstname' placeholder = 'First Name' type = 'text') 
-        input.form-control#lastName.my-2(name = 'Lastname' placeholder = 'Last Name' type = 'text') 
-        input.form-control#email.my-2(name = 'email' placeholder = 'Email' type = 'email') 
-        input.form-control#password.my-2(name = 'password' placeholder = 'password' type= 'password') 
-        input.form-control#confirmPassword.my-2(name = 'confirmPassword' placeholder = 'Confirm Password' type= 'password') 
-        button.btn.btn-success.my-2 Signup
+   .main
+     form.signupForm
+        h1.form-name REGISTER
+        input.form-control#firstName(name = 'firstname' placeholder = 'First Name' type = 'text') 
+        input.form-control#lastName(name = 'Lastname' placeholder = 'Last Name' type = 'text') 
+        input.form-control#email(name = 'email' placeholder = 'Email' type = 'email') 
+        input.form-control#password(name = 'password' placeholder = 'password' type= 'password') 
+        input.form-control#confirmPassword(name = 'confirmPassword' placeholder = 'Confirm Password' type= 'password') 
+        button.btn.btn-success Signup

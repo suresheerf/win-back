@@ -5,7 +5,8 @@
         "summary":"in this course one can learn and build with arduno",
         "price":234,
         "rating":4.5,
-        "img":"brain_3.jpg",
+        "imageCover":"brain_3.jpg",
+        "images":[],
         "instructor":{
                        "name":"arduno instructor",
                        "img":"instructor_img.jpg"
@@ -21,7 +22,8 @@
         "summary":"in this course one can learn and build with arduno",
         "price":1299,
         "rating":4.5,
-        "img":"cool_lion.jpg",
+        "imageCover":"cool_lion.jpg",
+        "images":[],
         "instructor":{
                        "name":"c instructor",
                        "img":"instructor_img.jpg"
@@ -38,7 +40,8 @@
         "summary":"in this course one can learn and build with arduno",
         "price":3999,
         "rating":4.5,
-        "img":"irresolute_mouse.jpg",
+        "imageCover":"irresolute_mouse.jpg",
+        "images":[],
         "instructor":{
                        "name":"aniamtion instructor",
                        "img":"instructor_img.jpg"
@@ -55,7 +58,8 @@
         "summary":"in this course one can learn and build with arduno",
         "price":2399,
         "rating":4.5,
-        "img":"fresh_food.jpg",
+        "imageCover":"fresh_food.jpg",
+        "images":[],
         "instructor":{
                        "name":"web instructor",
                        "img":"instructor_img.jpg"
@@ -72,7 +76,8 @@
         "summary":"in this course one can learn and build with arduno",
         "price":234,
         "rating":4.5,
-        "img":"danger_ahead.jpg",
+        "imageCover":"danger_ahead.jpg",
+        "images":[],
         "instructor":{
                        "name":"ms instructor",
                        "img":"instructor_img.jpg"

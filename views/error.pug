@@ -1,13 +1,12 @@
 extends base 
  
 block content 
- .container
-    .row
-      .col-md-12
-            .error-template
-                h1 Oops!
-                h2 404 Not Found</h2>
-                .error-details
-                  p= message
-                .error-actions
-                  a.btn.btn-primary(type='button' href = '/') Take Me Home
+ .main
+    .error-template(style="margin:auto; text-align:center;")
+        h1 Oops!
+        h2 404 Not Found</h2>
+        .error-details
+          p= message
+        .error-actions
+          a( href = '/') 
+            button.btn Take Me Home

@@ -1,11 +1,10 @@
 extends base
 block content 
-   .row 
-    .col-4
-    .col-4
-     
-     form.form.bg-dark
-        h1.mb-4(align = 'center') LOGIN
-        input.form-control#email.my-3(name = 'email' placeholder = 'Email' type = 'email') 
-        input.form-control#password.my-3(name = 'password' placeholder = 'password' type= 'password') 
-        button.btn.btn-success.my-2 Signin
+   .main
+      form.form
+         h1.form-name LOGIN
+         input.form-control#email(name = 'email' placeholder = 'Email' type = 'email') 
+         input.form-control#password(name = 'password' placeholder = 'password' type= 'password') 
+         button.btn.btn-success Signin
+         br
+         a(href="/forgotPassword") Forgot Password?
