@@ -18,6 +18,15 @@ const forgotPasswordForm = document.querySelector('.forgotPasswordForm');
 const resetPasswordForm = document.querySelector('.resetPasswordForm');
 
 // const detailsBtn = document.querySelector('.datails');
+const coll = document.querySelector(".collapsible");
+if(coll){
+  coll.addEventListener("click", function() {
+    this.classList.toggle("active");
+    const content = this.previousElementSibling;
+    content.classList.toggle('nav-active');
+  });
+}
+
 if(signupForm){
 
     signupForm.addEventListener('submit',e=>{

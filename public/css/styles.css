@@ -20,6 +20,45 @@ body{
 
 /* NAVBAR STYLES */
 
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    border-radius: 10%;
+    text-align: center;
+    outline: none;
+    font-size: 10px;
+  }
+
+  .collapsible:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 8px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .collapsible:hover {
+    background-color: #ccc;
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+  .nav-content {
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    flex : 1 -1 0;
+    
+  }
+
 .navbar{
     display:flex;
     justify-content: space-between;
@@ -42,18 +81,33 @@ body{
     flex: 1;
 }
 ul.navbar-nav{
+    position: absolute;
+    top:90px;
+    right: -100%;
     list-style: none;
     display: flex;
-    justify-content:flex-end;
+    flex-direction: column;
     align-items: center;
-    margin: 0;
-    flex: 1;
+    justify-content: center;
 }
+
+ul.navbar-nav li{
+    flex:1;
+    margin: 15px 0;
+}
+ul.navbar-nav.nav-active{
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.8);
+    align-items: center;
+    margin: 0 auto;
+}
+
 a.navbar-link{
     padding: 0.5em;
     margin:0 0.5em;
-    border: solid 1px lightgray;
-    border-radius: 10px;
+    /* border: solid 1px lightgray; */
+    /* border-radius: 10px; */
 }
 a{
    text-decoration: none;
@@ -71,12 +125,35 @@ a.navbar-link:hover{
     justify-content: center;
 }
 
+ul.navbar-nav .d-flex{
+    justify-content: flex-start;
+}
+
 .user-img{
     height: 40px;
     width: 40px;
     border-radius: 20px;
     float:inline-start;
 }
+
+
+
+@media only screen and (min-width: 768px){
+    .collapsible{
+        display: none;
+      }
+
+ul.navbar-nav{
+    position:static;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    margin: 0;
+    flex: auto;
+    
+}
+}
+
 
 /* HOME PAGE STYLES */
 
@@ -148,7 +225,8 @@ a.navbar-link:hover{
     grid-area: ntitle;
     align-self: center;
 }
-.ndate{grid-area: ndate;
+.ndate{
+    grid-area: ndate;
     justify-self: end;
     align-self: center;
 }
@@ -235,15 +313,18 @@ form a{
 }
 
 /* COURSES STYLES */
-
 .container-course{
     border-top: solid lightslategrey;
     display:grid;
-    grid-template-columns: repeat(5,auto);
-    grid-template-rows: repeat(3,auto);
-    grid-template-areas: "course-img course-img course-name . weeks"
-                         "course-img course-img description description description"
-                         "course-img course-img enroll details price";
+    gap: 10px;
+    
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(4,auto);
+    grid-template-areas: "course-img course-img course-img "
+                         "course-img course-img course-img "
+                         "course-name course-name  weeks"
+                         "description description description "
+                         "enroll details price ";
 }
 .img-course{
     width: 100%;
@@ -280,54 +361,19 @@ form a{
     background-color: rgb(136, 194, 28);
 }
 .price{grid-area: price;}
+   
 
-@media screen and (max-width: 768px) {
-    .container-course{
-        border-top: solid lightslategrey;
-        display:grid;
-        gap: 10px;
-        
-        grid-template-columns: repeat(3,auto);
-        grid-template-rows: repeat(4,auto);
-        grid-template-areas: "course-img course-img course-img "
-                             "course-img course-img course-img "
-                             "course-name course-name  weeks"
-                             "description description description "
-                             "enroll details price ";
-    }
-    .img-course{
-        width: 100%;
-        border-radius: 5px;
-        grid-area: course-img;
-    }
-    .course-name{
-        grid-area: course-name;
-        align-self: center;
-        margin: 0;
-        padding: 0 10px;
-    }
-    .weeks{
-        grid-area: weeks;
-        justify-self: end;
-        align-self: center;
-        margin: 0;
-        padding: 0 10px;
-    }
-    .description{
-        grid-area: description;
-        align-self: center;
-        text-align: justify;
-        padding: 0 10px;
-    }
-    .enroll{grid-area: enroll;}
-    .details{
-        grid-area: details;
-       
-    }
-    .price{grid-area: price;}
+@media only screen and (min-width: 768px) {
+.container-course{
     
-    
+    grid-template-columns: repeat(5,auto);
+    grid-template-rows: repeat(3,auto);
+    grid-template-areas: "course-img course-img course-name . weeks"
+                         "course-img course-img description description description"
+                         "course-img course-img enroll details price";
 }
+}
+
 /* COURSE DETAILS */
 .c-data{
     display: grid;

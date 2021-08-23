@@ -4,22 +4,24 @@ nav.navbar
       .d-flex
         img.logo(src = '/img/logo.jpg' alt = 'Logo')
         p.brand-name(style ="margin:auto 0;") WINROBOT 
-  ul.navbar-nav
-    li.navbar-item 
-      a.navbar-link(href = '/') Home 
-    li.navbar-item 
-      a.navbar-link(href = '/courses') Courses 
-    li.navbar-item 
-      a.navbar-link(href = '/about') About
-    if user   
+  .nav-content
+    ul.navbar-nav
       li.navbar-item 
-        a.navbar-link.logout Logout 
-      li.navbar-item
-       .d-flex   
-        img.user-img(src=`/img/users/${user.img}`) 
-        a.navbar-link(href = '/user/me')= user.name.split(' ')[0]
-    else 
+        a.navbar-link(href = '/') Home 
       li.navbar-item 
-        a.navbar-link(href = '/login') Login 
-      li.navbar-item  
-        a.navbar-link(href = '/signup') Signup 
+        a.navbar-link(href = '/courses') Courses 
+      li.navbar-item 
+        a.navbar-link(href = '/about') About
+      if user   
+        li.navbar-item 
+          a.navbar-link.logout Logout 
+        li.navbar-item
+        .d-flex   
+          img.user-img(src=`/img/users/${user.img}`) 
+          a.navbar-link(href = '/user/me')= user.name.split(' ')[0]
+      else 
+        li.navbar-item 
+          a.navbar-link(href = '/login') Login 
+        li.navbar-item  
+          a.navbar-link(href = '/signup') Signup 
+    button.collapsible 
