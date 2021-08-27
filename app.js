@@ -8,6 +8,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const compression = require("compression")
+const cors = require('cors');
 
 const courseRouter = require('./routers/courseRouter');
 const userRouter = require('./routers/userRouter');
@@ -24,7 +25,10 @@ app.set('views',path.join(__dirname,'views'));
 
 
 ///  middleware
+//implement of cors
+app.use(cors());
 
+app.options('*',cors());
 //static files 
 app.use(express.static(path.join(__dirname,'public')));
 
