@@ -4,12 +4,9 @@ const app = require('./app');
 
 dotenv.config({path:"./config.env"});
 const port = process.env.PORT || 3000;
-if(process.env.NODE_ENV === 'poduction')
-{
+const database = process.env.NODE_ENV === 'poduction'?process.env.DATABASE:process.env.DATABASE_LOCAL;
 
-  const database = 'mongodb+srv://admin:admin1234@cluster0.6oanr.mongodb.net/natours-test?retryWrites=true&w=majority';
-}
-mongoose.connect((this.database || process.env.DATABASE_LOCAL),{
+mongoose.connect(database,{
   useNewUrlParser:true,
   useCreateIndex:true,
   useFindAndModify:false,
