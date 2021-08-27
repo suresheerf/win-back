@@ -4,7 +4,7 @@ const app = require('./app');
 
 dotenv.config({path:"./config.env"});
 const port = process.env.PORT || 3000;
-const database = process.env.NODE_ENV === 'poduction'?process.env.DATABASE:process.env.DATABASE_LOCAL;
+const database = (process.env.NODE_ENV === 'production')? process.env.DATABASE : process.env.DATABASE_LOCAL;
 
 mongoose.connect(database,{
   useNewUrlParser:true,
