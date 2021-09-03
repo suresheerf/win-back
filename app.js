@@ -14,6 +14,7 @@ const courseRouter = require('./routers/courseRouter');
 const userRouter = require('./routers/userRouter');
 const reviewRouter = require('./routers/reviewRouter');
 const viewRouter = require('./routers/viewRouter');
+const notificationRouter = require('./routers/notificationRouter');
 const globalErrHandler = require('./controlers/errorController');
 const appError = require('./utils/appError');
 
@@ -73,6 +74,7 @@ app.use('/',viewRouter)
 app.use('/api/courses',courseRouter);
 app.use('/api/users',userRouter);
 app.use('/api/reviews',reviewRouter);
+app.use('/api/notification',notificationRouter);
 
 app.all('*',(req,res,next)=>{
    

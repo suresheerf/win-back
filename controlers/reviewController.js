@@ -16,7 +16,6 @@ exports.getAllReviews = catchAsync(async (req,res,next)=>{
         }
     })
     next();
-
 })
 exports.createReview = catchAsync(async (req,res,next)=>{
     if(!req.course) req.body.course = req.params.courseId;

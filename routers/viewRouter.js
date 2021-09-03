@@ -1,11 +1,12 @@
 const express = require('express');
 const viewController = require('../controlers/viewController');
 const authController = require('../controlers/authController');
+const notificationController = require('../controlers/notificationController');
 
 const router = express.Router();
 
 
-router.get('/',authController.isLoggedIn,viewController.getHome);
+router.get('/',authController.isLoggedIn,notificationController.getAll,viewController.getHome);
 router.get('/courses',authController.isLoggedIn,viewController.getCourses);
 router.get('/createcourse',authController.protect,authController.restrictTo('admin'),viewController.createCourse);
 router.get('/courses/:id',authController.isLoggedIn,viewController.getCourse);

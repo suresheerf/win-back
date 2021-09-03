@@ -6,16 +6,22 @@ import { createCourse } from './createCourse';
 import { updateUserData } from './updatesettings';
 import { forgotPassword } from './forgotPassword';
 import { resetPassword } from './resetPassword';
+import { createNotification } from './notification';
+import { removeNotification } from './notification';
 
 
 const loginForm = document.querySelector('.form');
 const signupForm = document.querySelector('.signupForm');
 const logoutBtn = document.querySelector('.logout');
+let createNoteForm;
 const createCourseForm = document.querySelector('.createCourseForm');
 const userDetailsForm = document.querySelector('.userDetailsForm');
 const changePasswordForm = document.querySelector('.changePasswordForm');
 const forgotPasswordForm = document.querySelector('.forgotPasswordForm');
 const resetPasswordForm = document.querySelector('.resetPasswordForm');
+const btnAddNotification = document.querySelector('.btnAddNotification');
+const btnCreateNotification = document.querySelector('.btnCreateNotification');
+const btnDeleteNotification = document.querySelectorAll('.btnDeleteNotification');
 
 // const detailsBtn = document.querySelector('.datails');
 const coll = document.querySelector(".collapsible");
@@ -40,6 +46,37 @@ if(signupForm){
     
         signup(name,email,password,confirmPassword)
     });
+}
+
+if(btnAddNotification){
+    btnAddNotification.addEventListener('click',()=>{ 
+        console.log('inside notification add')
+    const notificationForm = `<form class = "createNoteForm">
+    <input class = "form-control" name = "title" id = "title">
+    <br>
+    <textarea class ="form-control" cols="10" rows = "3" name = "notification" id = "notification"></textarea>
+    <button class = "btn btnCreateNotification" type = "submit">create</button>
+    </form>`;
+    btnAddNotification.insertAdjacentHTML('beforebegin',notificationForm);
+    createNoteForm = document.querySelector('.createNoteForm');
+    if(createNoteForm){
+        console.log('before add eventlistener')
+       createNoteForm.addEventListener('submit',e=>{
+           e.preventDefault();
+           const title = document.getElementById('title').value;
+           const notification = document.getElementById('notification').value;
+           createNotification(title,notification);
+       });
+   }
+}
+);
+}
+if(btnDeleteNotification){
+    btnDeleteNotification.forEach(x=>{
+        x.addEventListener('click',()=>{
+            removeNotification(x.id);
+        })
+    })
 }
 if(createCourseForm){
 

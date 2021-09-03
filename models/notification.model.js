@@ -6,7 +6,9 @@ const notificationSchema = new mongoose.Schema({
         type:String,
         required:[true,'Notification must not be empty']
     },
-    date: Date.now
+    date: {
+        type: Date,
+        default: Date.now}
 },
 {
     toJSON:{virtuals : true},

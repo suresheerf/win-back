@@ -20,14 +20,17 @@ block content
           p ipsum dolor sit amet consectetur adipisicing elit. Commodi officia autem assumenda dolor, quia repellendus.
           p 3 
       .carriculum 
-          h5 caricullum
+          h5 carricullum
           each week in course.caricullum 
             h6 Week #{week.week} 
             p= week.despriction
-            ul
-              each link in week.links 
-                li=link.name
-                li=link.link
+            ul.course-links
+              each link in week.links
+                .lesson 
+                  li=link.name
+                  li
+                    a(href=link.link)
+                      button.btn  play
                     
 
       

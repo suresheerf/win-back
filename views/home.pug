@@ -16,12 +16,14 @@ block content
         h2 Notifications
         if (user && user.role === 'admin')
          button.btn.btnAddNotification new notification
-        .note 
-          h3.ntitle title 
-          p.ndate Date
-          p.ncontent notification content
-        if (user && user.role === 'admin')
-          button.btn.btnDeleteNotification Remove 
+        .notes
+          each note in notifications 
+            .note 
+              h3.ntitle= note.title 
+              p.ndate= note.date.toLocaleDateString()
+              p.ncontent= note.notification
+            if (user && user.role === 'admin')
+              button.btn.btnDeleteNotification(id = note._id) Remove 
 
         
         

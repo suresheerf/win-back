@@ -213,10 +213,14 @@ ul.navbar-nav{
 .heading {
     text-align: justify;
 }
-
+.notes{
+    max-height:50vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
 .note{
     display: grid;
-
+    margin-right: 10px;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(2,1fr);
     grid-template-areas: "ntitle ntitle ndate"
@@ -238,9 +242,9 @@ ul.navbar-nav{
         .data{
             text-align: justify;
             display: grid;
+            overflow-y: hidden;
             gap: 20px;
             padding: 10px;
-            
             grid-template-columns: repeat(3,1fr);
             grid-template-areas: "heading heading notification";
         }
@@ -248,7 +252,10 @@ ul.navbar-nav{
             grid-area: heading;
             text-align: justify;
         }
-        .notification{grid-area: notification;}
+        .notifications{
+            grid-area: notification;
+           
+        }
         
         
     
@@ -281,6 +288,7 @@ form{
     flex-direction: column;
     background-color: #343342a1;
     border-radius: 10px;
+    margin: 0 auto;
     padding: 0 5px;
     color: black;
 
@@ -410,6 +418,26 @@ form a{
     grid-area: cprice;
 }
 
+.reviews{
+    margin: 10px auto;
+    text-align: center;
+}
+.carriculum{
+  background-color: #1e0f1c;
+  margin: 10px auto;
+  padding: 10px;
+  text-align: center;
+
+}
+.course-links{
+    list-style-type:none ;
+    margin: 10px auto;
+    padding: auto;
+}
+.lesson{
+    
+    background-color: rgba(0,0,0,0.2);
+}
 /* ALERT STYLES */
 
 .alert{
