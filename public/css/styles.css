@@ -179,7 +179,7 @@ ul.navbar-nav{
 .home{
     background-image: url('./../img/carousel/brain_3.jpg');
     width:100%;
-    height: 100vh;
+    height: 50vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom center;
@@ -190,7 +190,8 @@ ul.navbar-nav{
     z-index: -2;
 }
 .content{
-    color: rgb(202, 216, 208);  
+    color: rgb(202, 216, 208); 
+    text-align: center; 
 }
 
 .home::before{
@@ -266,6 +267,7 @@ ul.navbar-nav{
 .footer{
     flex: 0 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-top: solid lightslategrey;
@@ -273,14 +275,21 @@ ul.navbar-nav{
 .copy,.social,.contact{
   flex: 1;
   }
-footer h3,.links{
+.contact{
+    padding-bottom: 10px;
+}
+footer h5,.links{
     text-align: center;
 }
 
 footer a{
     color:blueviolet;
 }
-
+@media (min-width: 768px ) {
+    .footer{
+        flex-direction: row;
+    }
+}
 
 /* FORMS STYLES */
 form{
@@ -424,15 +433,18 @@ form a{
 }
 .carriculum{
   background-color: #1e0f1c;
-  margin: 10px auto;
-  padding: 10px;
+  margin: 10px auto !important;
+  padding: 10px !important;
   text-align: center;
 
 }
 .course-links{
     list-style-type:none ;
-    margin: 10px auto;
+    margin: 10px auto !important;
     padding: auto;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
 }
 .lesson{
     

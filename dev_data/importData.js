@@ -5,8 +5,8 @@ let data;
 
       
 mongoose.
-// connect('mongodb+srv://dbuser128:dbuser128@cluster0.6oanr.mongodb.net/natours-test?retryWrites=true&w=majority',{
-      connect('mongodb://localhost:27017/winrobot',{
+connect('mongodb+srv://dbuser128:dbuser128@cluster0.6oanr.mongodb.net/natours-test?retryWrites=true&w=majority',{
+    //   connect('mongodb://localhost:27017/winrobot',{
         useCreateIndex:true,
         useUnifiedTopology:true,
         useFindAndModify: false,
@@ -38,7 +38,7 @@ importData = async ()=>{
    process.exit();
 }
 
-delateData = async ()=>{
+deleteData = async ()=>{
     try{
     await Model.deleteMany();
     console.log('data successfully deleted!');
@@ -51,5 +51,5 @@ delateData = async ()=>{
 if(process.argv[2] === '_import'){
     importData();
 }else if(process.argv[2] === '_delete'){
-    delateData();
+    deleteData();
 }

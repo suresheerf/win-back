@@ -19,15 +19,15 @@
                  "links":[
                      {
                          "name":"introduction",
-                         "link":"https://www.youtube.com/watch?v=d0e6ScoS3Sw"
+                         "link":"https://www.youtube.com/embed/d0e6ScoS3Sw"
                      },
                      {
                          "name":"difference between mc and mp",
-                         "link":"https://www.youtube.com/watch?v=dcNk0urQsQM"
+                         "link":"https://www.youtube.com/embed/dcNk0urQsQM"
                      },
                      {
                          "name":"building with microcontroller vs boards(arduino uno)",
-                         "link":"https://www.youtube.com/watch?v=IdEcm3GU7TM"
+                         "link":"https://www.youtube.com/embed/IdEcm3GU7TM"
                      }
                      
                  ]
@@ -38,15 +38,15 @@
                  "links":[
                      {
                          "name":"introduction to arduino uno",
-                         "link":"https://www.youtube.com/watch?v=BiCSW6QR6HA"
+                         "link":"https://www.youtube.com/embed/BiCSW6QR6HA"
                      },
                      {
                          "name":"IO PINS",
-                         "link":"https://www.youtube.com/watch?v=OZGMLOwHYf8"
+                         "link":"https://www.youtube.com/embed/OZGMLOwHYf8"
                      },
                      {
                          "name":"setting up arduno uno for programming",
-                         "link":"https://www.youtube.com/watch?v=ELUF8m24sZo"
+                         "link":"https://www.youtube.com/embed/ELUF8m24sZo"
                      }
                      
                  ]
@@ -57,15 +57,15 @@
                  "links":[
                      {
                          "name":"LED Blinking(OUTPUT)",
-                         "link":"https://www.youtube.com/watch?v=dnPPoetX0uw"
+                         "link":"https://www.youtube.com/embed/dnPPoetX0uw"
                      },
                      {
                          "name":"interfacing with button(INPUT)",
-                         "link":"https://www.youtube.com/watch?v=58Ynhqmvzoc"
+                         "link":"https://www.youtube.com/embed/58Ynhqmvzoc"
                      },
                      {
                          "name":"16x2 LCD",
-                         "link":"https://www.youtube.com/watch?v=Mr9FQKcrGpA"
+                         "link":"https://www.youtube.com/embed/Mr9FQKcrGpA"
                      }
                      
                  ]
