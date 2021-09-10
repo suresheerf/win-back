@@ -3,7 +3,7 @@ body{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    background: #000;
+    background: linear-gradient(#635122,#65a9c8);
     color: aliceblue;
     border: solid lightslategrey;
     margin: 0;

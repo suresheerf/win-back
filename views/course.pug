@@ -30,6 +30,12 @@ block content
                   li=link.name
                   li
                     iframe(src=`${link.link}` title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
-                    
-
+                  if (user && user.role === 'admin')
+                   button.btn.btnDeleteLesson(id = link._id) Remove 
+            if (user && user.role === 'admin')       
+              button.btn.btnAddLesson(id = week._id) add lesson      
+              button.btn.btnDeleteWeek(id = week._id) remove week  
+          if (user && user.role === 'admin')     
+            button.btn.btnAddWeek add week       
+          
       

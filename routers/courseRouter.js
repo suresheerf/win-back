@@ -20,5 +20,16 @@ router.
  get(courseController.getCourse).
  delete(courseController.deleteCourse).
  patch(courseController.updateCourse);
+ 
+ router.
+ route('/:id/w').
+ delete(courseController.deleteWeek).
+ patch(courseController.updateWeek);
+ router.
+ route('/:id/:w').
+ patch(courseController.updatelesson);
+ router.
+ route('/:id/:l').
+ delete(courseController.deleteLesson);
 
  module.exports = router;

@@ -86,8 +86,66 @@
                        "name":"c instructor",
                        "img":"instructor_img.jpg"
                          },
-        "description":"arduno uno is basic conrtroler development board and it's very easy to use,this make this board so popular.in this course you will learn about how to interact with board and progamming of board and interface it with different sensors and also build 10 stater projects."               
-               
+        "description":"arduno uno is basic conrtroler development board and it's very easy to use,this make this board so popular.in this course you will learn about how to interact with board and progamming of board and interface it with different sensors and also build 10 stater projects.",               
+        "caricullum":[
+            {
+                "week":1,
+                "description":"introduction to microcontroller and microprocesor",
+                "links":[
+                    {
+                        "name":"introduction",
+                        "link":"https://www.youtube.com/embed/d0e6ScoS3Sw"
+                    },
+                    {
+                        "name":"difference between mc and mp",
+                        "link":"https://www.youtube.com/embed/dcNk0urQsQM"
+                    },
+                    {
+                        "name":"building with microcontroller vs boards(arduino uno)",
+                        "link":"https://www.youtube.com/embed/IdEcm3GU7TM"
+                    }
+                    
+                ]
+            },
+            {
+                "week":2,
+                "description":"introduction to arduino uno",
+                "links":[
+                    {
+                        "name":"introduction to arduino uno",
+                        "link":"https://www.youtube.com/embed/BiCSW6QR6HA"
+                    },
+                    {
+                        "name":"IO PINS",
+                        "link":"https://www.youtube.com/embed/OZGMLOwHYf8"
+                    },
+                    {
+                        "name":"setting up arduno uno for programming",
+                        "link":"https://www.youtube.com/embed/ELUF8m24sZo"
+                    }
+                    
+                ]
+            },
+            {
+                "week":3,
+                "description":"interfacing with different sensors",
+                "links":[
+                    {
+                        "name":"LED Blinking(OUTPUT)",
+                        "link":"https://www.youtube.com/embed/dnPPoetX0uw"
+                    },
+                    {
+                        "name":"interfacing with button(INPUT)",
+                        "link":"https://www.youtube.com/embed/58Ynhqmvzoc"
+                    },
+                    {
+                        "name":"16x2 LCD",
+                        "link":"https://www.youtube.com/embed/Mr9FQKcrGpA"
+                    }
+                    
+                ]
+            }
+        ]       
 
     },
 
@@ -104,8 +162,66 @@
                        "name":"aniamtion instructor",
                        "img":"instructor_img.jpg"
                          },
-        "description":"arduno uno is basic conrtroler development board and it's very easy to use,this make this board so popular.in this course you will learn about how to interact with board and progamming of board and interface it with different sensors and also build 10 stater projects."               
-               
+        "description":"arduno uno is basic conrtroler development board and it's very easy to use,this make this board so popular.in this course you will learn about how to interact with board and progamming of board and interface it with different sensors and also build 10 stater projects.",               
+        "caricullum":[
+            {
+                "week":1,
+                "description":"introduction to microcontroller and microprocesor",
+                "links":[
+                    {
+                        "name":"introduction",
+                        "link":"https://www.youtube.com/embed/d0e6ScoS3Sw"
+                    },
+                    {
+                        "name":"difference between mc and mp",
+                        "link":"https://www.youtube.com/embed/dcNk0urQsQM"
+                    },
+                    {
+                        "name":"building with microcontroller vs boards(arduino uno)",
+                        "link":"https://www.youtube.com/embed/IdEcm3GU7TM"
+                    }
+                    
+                ]
+            },
+            {
+                "week":2,
+                "description":"introduction to arduino uno",
+                "links":[
+                    {
+                        "name":"introduction to arduino uno",
+                        "link":"https://www.youtube.com/embed/BiCSW6QR6HA"
+                    },
+                    {
+                        "name":"IO PINS",
+                        "link":"https://www.youtube.com/embed/OZGMLOwHYf8"
+                    },
+                    {
+                        "name":"setting up arduno uno for programming",
+                        "link":"https://www.youtube.com/embed/ELUF8m24sZo"
+                    }
+                    
+                ]
+            },
+            {
+                "week":3,
+                "description":"interfacing with different sensors",
+                "links":[
+                    {
+                        "name":"LED Blinking(OUTPUT)",
+                        "link":"https://www.youtube.com/embed/dnPPoetX0uw"
+                    },
+                    {
+                        "name":"interfacing with button(INPUT)",
+                        "link":"https://www.youtube.com/embed/58Ynhqmvzoc"
+                    },
+                    {
+                        "name":"16x2 LCD",
+                        "link":"https://www.youtube.com/embed/Mr9FQKcrGpA"
+                    }
+                    
+                ]
+            }
+        ]       
 
     },
 
@@ -122,8 +238,66 @@
                        "name":"web instructor",
                        "img":"instructor_img.jpg"
                          },
-        "description":"arduno uno is basic conrtroler development board and it's very easy to use,this make this board so popular.in this course you will learn about how to interact with board and progamming of board and interface it with different sensors and also build 10 stater projects."               
-               
+        "description":"arduno uno is basic conrtroler development board and it's very easy to use,this make this board so popular.in this course you will learn about how to interact with board and progamming of board and interface it with different sensors and also build 10 stater projects.",              
+        "caricullum":[
+            {
+                "week":1,
+                "description":"introduction to microcontroller and microprocesor",
+                "links":[
+                    {
+                        "name":"introduction",
+                        "link":"https://www.youtube.com/embed/d0e6ScoS3Sw"
+                    },
+                    {
+                        "name":"difference between mc and mp",
+                        "link":"https://www.youtube.com/embed/dcNk0urQsQM"
+                    },
+                    {
+                        "name":"building with microcontroller vs boards(arduino uno)",
+                        "link":"https://www.youtube.com/embed/IdEcm3GU7TM"
+                    }
+                    
+                ]
+            },
+            {
+                "week":2,
+                "description":"introduction to arduino uno",
+                "links":[
+                    {
+                        "name":"introduction to arduino uno",
+                        "link":"https://www.youtube.com/embed/BiCSW6QR6HA"
+                    },
+                    {
+                        "name":"IO PINS",
+                        "link":"https://www.youtube.com/embed/OZGMLOwHYf8"
+                    },
+                    {
+                        "name":"setting up arduno uno for programming",
+                        "link":"https://www.youtube.com/embed/ELUF8m24sZo"
+                    }
+                    
+                ]
+            },
+            {
+                "week":3,
+                "description":"interfacing with different sensors",
+                "links":[
+                    {
+                        "name":"LED Blinking(OUTPUT)",
+                        "link":"https://www.youtube.com/embed/dnPPoetX0uw"
+                    },
+                    {
+                        "name":"interfacing with button(INPUT)",
+                        "link":"https://www.youtube.com/embed/58Ynhqmvzoc"
+                    },
+                    {
+                        "name":"16x2 LCD",
+                        "link":"https://www.youtube.com/embed/Mr9FQKcrGpA"
+                    }
+                    
+                ]
+            }
+        ]       
 
     },
 
@@ -140,8 +314,66 @@
                        "name":"ms instructor",
                        "img":"instructor_img.jpg"
                          },
-        "description":"arduno uno is basic conrtroler development board and it's very easy to use,this make this board so popular.in this course you will learn about how to interact with board and progamming of board and interface it with different sensors and also build 10 stater projects."               
-               
+        "description":"arduno uno is basic conrtroler development board and it's very easy to use,this make this board so popular.in this course you will learn about how to interact with board and progamming of board and interface it with different sensors and also build 10 stater projects.",               
+        "caricullum":[
+            {
+                "week":1,
+                "description":"introduction to microcontroller and microprocesor",
+                "links":[
+                    {
+                        "name":"introduction",
+                        "link":"https://www.youtube.com/embed/d0e6ScoS3Sw"
+                    },
+                    {
+                        "name":"difference between mc and mp",
+                        "link":"https://www.youtube.com/embed/dcNk0urQsQM"
+                    },
+                    {
+                        "name":"building with microcontroller vs boards(arduino uno)",
+                        "link":"https://www.youtube.com/embed/IdEcm3GU7TM"
+                    }
+                    
+                ]
+            },
+            {
+                "week":2,
+                "description":"introduction to arduino uno",
+                "links":[
+                    {
+                        "name":"introduction to arduino uno",
+                        "link":"https://www.youtube.com/embed/BiCSW6QR6HA"
+                    },
+                    {
+                        "name":"IO PINS",
+                        "link":"https://www.youtube.com/embed/OZGMLOwHYf8"
+                    },
+                    {
+                        "name":"setting up arduno uno for programming",
+                        "link":"https://www.youtube.com/embed/ELUF8m24sZo"
+                    }
+                    
+                ]
+            },
+            {
+                "week":3,
+                "description":"interfacing with different sensors",
+                "links":[
+                    {
+                        "name":"LED Blinking(OUTPUT)",
+                        "link":"https://www.youtube.com/embed/dnPPoetX0uw"
+                    },
+                    {
+                        "name":"interfacing with button(INPUT)",
+                        "link":"https://www.youtube.com/embed/58Ynhqmvzoc"
+                    },
+                    {
+                        "name":"16x2 LCD",
+                        "link":"https://www.youtube.com/embed/Mr9FQKcrGpA"
+                    }
+                    
+                ]
+            }
+        ]      
 
     }
 ]

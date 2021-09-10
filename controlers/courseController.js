@@ -1,5 +1,5 @@
 const { query } = require('express');
-const course = require('./../models/course.model');
+const Course = require('./../models/course.model');
 const appError = require('./../utils/appError');
 const APIfeatures = require('./../utils/apiFeatures');
 const catchAsync = require('./../utils/catchAsync');
@@ -73,7 +73,7 @@ exports.getCourses = catchAsync(async (req,res,next)=>{
 });
 
 exports.getCourse =catchAsync( async (req,res,next)=>{
-         const cour = await course.findById(req.params.id);
+         const cour = await Course.findById(req.params.id);
 
          if(!cour){
              return next(new appError('not found any course with this ID',404));
@@ -87,7 +87,7 @@ exports.getCourse =catchAsync( async (req,res,next)=>{
 });
 
 exports.createCourse =catchAsync( async (req,res,next)=>{
-        const cou = await course.create(req.body);
+        const cou = await Course.create(req.body);
         res.status(201).json({
             status:"success",
             data:{
@@ -97,7 +97,7 @@ exports.createCourse =catchAsync( async (req,res,next)=>{
 });
 
 exports.deleteCourse =catchAsync( async (req,res,next)=>{
-       const course = await course.findByIdAndDelete(req.params.id);
+       const course = await Course.findByIdAndDelete(req.params.id);
        if(!course){
         return next(new appError('not found any course with this ID',404));
     }
@@ -106,8 +106,94 @@ exports.deleteCourse =catchAsync( async (req,res,next)=>{
 
 exports.updateCourse =catchAsync( async (req,res,next)=>{
 
-       const cour = await course.findByIdAndUpdate(req.params.id,req.body,{
+       const cour = await Course.findByIdAndUpdate(req.params.id,req.body,{
             new : true,
+        });
+        if(!cour){
+            return next(new appError('not found any course with this ID',404));
+        }
+        res.status(200).json({
+            status:"success",
+            data:{
+                cour
+            }
+        });
+    } );
+exports.deleteLesson =catchAsync( async (req,res,next)=>{
+       const course = await Course.updateOne({},
+        {$pull:{
+            "caricullum.$[].links":{_id:req.params.l}
+       }},
+     {
+         new : true,
+         
+     });
+       if(!course){
+        return next(new appError('not found any course with this ID',404));
+    }
+    res.status(200).json({
+        status:"success",
+        
+    });
+});
+
+exports.updatelesson =catchAsync( async (req,res,next)=>{
+       const cour = await Course.updateOne({},
+           {$push:{
+               "caricullum.$[elem].links":{
+                   name:req.body.name,
+                   link:req.body.link
+                                         }
+                  }
+          },
+        {
+            new : true,
+            arrayFilters:[
+                {
+                    "elem._id":req.params.w
+                }
+            ]
+        });
+        if(!cour){
+            return next(new appError('not found any course with this ID',404));
+        }
+        res.status(200).json({
+            status:"success",
+            data:{
+                cour
+            }
+        });
+    } );
+exports.deleteWeek =catchAsync( async (req,res,next)=>{
+       const course = await Course.updateOne({},
+        {$pull:{
+            "caricullum":{_id:req.body.id}
+       }},
+     {
+         new : true,
+         
+     });
+       if(!course){
+        return next(new appError('not found any course with this ID',404));
+    }
+    res.status(200).json({
+        status:"success",
+        
+    });
+});
+
+exports.updateWeek =catchAsync( async (req,res,next)=>{
+       const cour = await Course.updateOne({_id:req.params.id},
+           {$push:{
+               "caricullum":{
+                   week:req.body.week,
+                   description:req.body.wdescrip
+                                         }
+                  }
+          },
+        {
+            new : true,
+            
         });
         if(!cour){
             return next(new appError('not found any course with this ID',404));

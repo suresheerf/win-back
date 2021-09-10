@@ -8,6 +8,10 @@ import { forgotPassword } from './forgotPassword';
 import { resetPassword } from './resetPassword';
 import { createNotification } from './notification';
 import { removeNotification } from './notification';
+import { createLesson } from './lesson';
+import { removeLesson } from './lesson';
+import { createWeek } from './week';
+import { removeWeek } from './week';
 
 
 const loginForm = document.querySelector('.form');
@@ -22,6 +26,10 @@ const resetPasswordForm = document.querySelector('.resetPasswordForm');
 const btnAddNotification = document.querySelector('.btnAddNotification');
 const btnCreateNotification = document.querySelector('.btnCreateNotification');
 const btnDeleteNotification = document.querySelectorAll('.btnDeleteNotification');
+const btnAddLesson = document.querySelectorAll('.btnAddLesson');
+const btnDeleteLesson = document.querySelectorAll('.btnDeleteLesson');
+const btnAddWeek = document.querySelector('.btnAddWeek');
+const btnDeleteWeek = document.querySelectorAll('.btnDeleteWeek');
 
 // const detailsBtn = document.querySelector('.datails');
 const coll = document.querySelector(".collapsible");
@@ -75,6 +83,70 @@ if(btnDeleteNotification){
     btnDeleteNotification.forEach(x=>{
         x.addEventListener('click',()=>{
             removeNotification(x.id);
+        })
+    })
+}
+if(btnAddLesson){
+    btnAddLesson.forEach(x=>{
+    x.addEventListener('click',()=>{ 
+    const lessonForm = `<form class = "createLessonForm" >
+    <input class = "form-control" name = "title" id = "description" placeholder = "lesson description">
+    <br>
+    <input class = "form-control" type = "url" id = "lesson-link" placeholder = "youtube embed URL">
+    <button class = "btn btnCreateLesson" type = "submit">create</button>
+    </form>`;
+
+    x.insertAdjacentHTML('beforebegin',lessonForm);
+
+    let createLessonForm = document.querySelector(".createLessonForm");
+    if(createLessonForm){
+       createLessonForm.addEventListener('submit',e=>{
+           e.preventDefault();
+           const description = document.getElementById('description').value;
+           const link = document.getElementById('lesson-link').value;
+           createLesson(x.id,description,link);
+       });
+   }
+}
+    
+);
+    }
+    );
+}
+if(btnDeleteLesson){
+    btnDeleteLesson.forEach(x=>{
+        x.addEventListener('click',()=>{
+            removeLesson(x.id);
+        })
+    })
+}
+if(btnAddWeek){
+    btnAddWeek.addEventListener('click',()=>{ 
+    const weekForm = `<form class = "createWeekForm" >
+    <input class = "form-control" name = "title" id = "week" placeholder = "week number">
+    <br>
+    <input class = "form-control" id = "wdescrip" placeholder = "week description">
+    <button class = "btn btnCreateWeek" type = "submit">create</button>
+    </form>`;
+
+    btnAddWeek.insertAdjacentHTML('beforebegin',weekForm);
+
+    let createWeekForm = document.querySelector(".createWeekForm");
+    if(createWeekForm){
+       createWeekForm.addEventListener('submit',e=>{
+           e.preventDefault();
+           const week = document.getElementById('week').value;
+           const wdescrip = document.getElementById('wdescrip').value;
+           createWeek(week,wdescrip);
+       });
+    }
+}
+    );
+}
+if(btnDeleteWeek){
+    btnDeleteWeek.forEach(x=>{
+        x.addEventListener('click',()=>{
+            removeWeek(x.id);
         })
     })
 }
