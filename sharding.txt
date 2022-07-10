@@ -1,0 +1,44 @@
+
+To start mongodb process
+
+mongod --dbpath /var/lib/mongorouter/ --bind_ip_all --port 27018 --fork --logpath /var/log/mongodb/mongorouter.log
+
+To setup config server
+
+mongod --configsvr  --port 28041 --bind_ip localhost,103.27.86.33 --replSet config_repl --dbpath shardconf/configsrv --fork --logpath shardconf/configsrv/config.log
+mongod --configsvr  --port 28042 --bind_ip localhost,103.27.86.33 --replSet config_repl --dbpath shardconf/configsrv1 --fork --logpath shardconf/configsrv1/config1.log
+mongod --configsvr  --port 28043 --bind_ip localhost,103.27.86.33 --replSet config_repl --dbpath shardconf/configsrv2 --fork --logpath shardconf/configsrv2/config2.log
+
+
+mongod --config /etc/mongod.config.conf
+mongod --config /etc/mongod.config1.conf
+mongod --config /etc/mongod.config2.conf
+
+To setup shard1 server
+
+mongod --keyFile /etc/mongodbShard.key --shardsvr --port 28081 --bind_ip localhost,103.27.86.33 --replSet shard_repl --dbpath shard1/shardrep1 --fork --logpath shard1/logfiles/shard1.log
+mongod --keyFile /etc/mongodbShard.key --shardsvr --port 28082 --bind_ip localhost,103.27.86.33 --replSet shard_repl --dbpath shard1/shardrep2 --fork --logpath shard1/logfiles/shard2.log
+mongod --keyFile /etc/mongodbShard.key --shardsvr --port 28083 --bind_ip localhost,103.27.86.33 --replSet shard_repl --dbpath shard1/shardrep3 --fork --logpath shard1/logfiles/shard3.log
+
+To setup shard2 server
+
+mongod --keyFile /etc/mongodbShard.key --shardsvr --port 28081 --bind_ip localhost,103.27.86.37 --replSet shard2_repl --dbpath shard2/shard2rep1 --fork --logpath shard2/logfiles/shard1.log
+mongod --keyFile /etc/mongodbShard.key --shardsvr --port 28082 --bind_ip localhost,103.27.86.37 --replSet shard2_repl --dbpath shard2/shard2rep2 --fork --logpath shard2/logfiles/shard2.log
+mongod --keyFile /etc/mongodbShard.key --shardsvr --port 28083 --bind_ip localhost,103.27.86.37 --replSet shard2_repl --dbpath shard2/shard2rep3 --fork --logpath shard2/logfiles/shard3.log
+
+
+To start mongos
+
+mongos --keyFile /etc/mongodbShard.key --configdb config_repl/103.27.86.33:28041,103.27.86.33:28042,103.27.86.33:28043 --bind_ip 103.27.86.33 --port 27019 --fork --logpath shard1/logfiles/mongodb.log
+
+db.posts.getShardDistribution()
+
+sh.balancerCollectionStatus("cloud.posts")
+
+sh.shardCollection("cloud.posts",{_id:1})
+
+db.posts.createIndex({_id:1})
+
+ps -aef  | grep "mongo"
+
+mongod --fork --logpath /var/log/mongod.log --auth
